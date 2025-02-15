@@ -1,0 +1,24 @@
+{
+  "name": "home",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.0.6",
+    "mongoose": "^8.10.0",
+    "solid-atom": "^1.0.1",
+    "solid-jotai": "^0.3.0",
+    "solid-js": "^1.9.4",
+    "tailwindcss": "^4.0.6"
+  },
+  "devDependencies": {
+    "typescript": "~5.7.2",
+    "vite": "^6.1.0",
+    "vite-plugin-solid": "^2.11.0"
+  }
+}
