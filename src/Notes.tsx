@@ -58,21 +58,23 @@ export function DraggableStickyNote(
 
   return (
     <div
-      onMouseDown={handleMouseDown}
-      style={{
-        position: "absolute",
-        top: `${position().y}px`,
-        left: `${position().x}px`,
-        width: "200px",
-        height: "200px",
-        background: color,
-        padding: "10px",
-        cursor: "move",
-        "user-select": "none",
-        "box-shadow": "0 2px 5px rgba(0,0,0,0.3)",
-      }}
-    >
-      <p>{content}</p>
-    </div>
+    onMouseDown={handleMouseDown}
+    style={{
+      position: "absolute",
+      top: `${position().y}px`,
+      left: `${position().x}px`,
+      width: "200px",
+      height: "200px",
+      background: color,
+      padding: "10px",
+      cursor: "move",
+      "user-select": "none",
+      "box-shadow": "0 2px 5px rgba(0,0,0,0.3)",
+      overflow: "hidden",
+      "word-wrap": "break-word", // または wordBreak: "break-all" としても可
+    }}
+  >
+    <p>{content}</p>
+  </div>
   );
 }
