@@ -5,6 +5,7 @@ import { atom, useAtom } from "solid-jotai";
 
 const background = "#181818";
 const border = "#2d2d2d";
+const style = "bg-white/20";
 export const scaleState = atom(1);
 export function DraggableInfiniteBoard(
   props: {
@@ -118,18 +119,19 @@ export function DraggableInfiniteBoard(
           class="absolute bottom-10 right-10 w-14 h-14 flex items-center justify-center text-white bg-[#1DA1F2] rounded-full shadow-xl hover:bg-[#1991DA] transition-colors cursor-pointer"
           onClick={() => setIsOpenForm(true)}
         >
-          <svg
+            <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-7 w-7"
+            fill="none"
             viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path d="M23.643 4.937a9.816 9.816 0 0 1-2.828.775 4.958 4.958 0 0 0 2.165-2.724 9.916 9.916 0 0 1-3.127 1.184 4.924 4.924 0 0 0-8.384 4.49A13.976 13.976 0 0 1 1.671 3.149a4.822 4.822 0 0 0-.666 2.475 4.924 4.924 0 0 0 2.188 4.097 4.902 4.902 0 0 1-2.229-.616v.062a4.928 4.928 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.224.085 4.93 4.93 0 0 0 4.6 3.417A9.867 9.867 0 0 1 0 19.54a13.94 13.94 0 0 0 7.548 2.209c9.055 0 14.009-7.496 14.009-13.986 0-.213-.005-.425-.014-.636A10.025 10.025 0 0 0 24 4.59a9.68 9.68 0 0 1-2.357.647z" />
-          </svg>
+            stroke="currentColor"
+            >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            </svg>
         </div>
-        <div class="absolute bottom-10 left-10  h-14 flex items-center justify-center text-white">
-          ↓↓スクロールバー回せば下にあります
-        </div>
+        <div class="absolute bottom-0 left-15 h-20 flex items-center justify-center text-white bg-white/30 px-10 rounded-t-lg border-t-1 border-r-1 border-l-1">
+        ↓↓スクロールバー回せば下にあります
+</div>
       </div>
       {isOpenForm() && (
         <PopUpFrame closeScript={setIsOpenForm}>
