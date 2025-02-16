@@ -134,7 +134,12 @@ export function DraggableInfiniteBoard(
             />
           </svg>
         </div>
-        <div class="absolute bottom-0 left-15 h-20 flex items-center justify-center text-white bg-white/30 px-10 rounded-t-lg border-t-1 border-r-1 border-l-1">
+        <div
+        onClick={() => {
+          //下にスクロール
+          window.scrollTo({ top: window.scrollY + 900, behavior: 'smooth' });
+        }}
+        class="absolute bottom-0 left-15 h-20 flex items-center justify-center text-white bg-white/30 font-bold  hover:bg-white/10 px-10 rounded-t-lg border-t-1 border-r-1 border-l-1 cursor-pointer">
           ↓↓スクロールバー回せば下にあります
         </div>
       </div>
