@@ -10,7 +10,7 @@ export default defineConfig({
   server: {
     port: 3000,
     host: true, // すべてのホストからのアクセスを許可
-    allowedHosts: ["denko.takos.jp"]
+    allowedHosts: ["denko.takos.jp"],
   },
   build: {
     target: "esnext",

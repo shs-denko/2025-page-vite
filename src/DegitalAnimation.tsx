@@ -1,4 +1,4 @@
-import { onMount, onCleanup } from "solid-js";
+import { onCleanup, onMount } from "solid-js";
 
 export default function DigitalAnimation() {
   let canvas: HTMLCanvasElement | undefined;
@@ -59,7 +59,7 @@ export default function DigitalAnimation() {
         left: "0",
         "z-index": "-1",
         width: "100%",
-        height: "100%"
+        height: "100%",
       }}
     />
   );

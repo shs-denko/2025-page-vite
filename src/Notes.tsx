@@ -1,12 +1,12 @@
-import { createSignal, createEffect, JSX } from "solid-js";
-import { notesState } from "./App"; 
+import { createEffect, createSignal, JSX } from "solid-js";
+import { notesState } from "./App";
 import { useAtom } from "solid-jotai";
 import { scaleState } from "./Boad";
 
 export function DraggableStickyNote(
   { id, onMove }: {
     id: string;
-    onMove: (newPos: { x: number; y: number; }) => void;
+    onMove: (newPos: { x: number; y: number }) => void;
   },
 ): JSX.Element {
   const [notes] = useAtom(notesState);
@@ -14,7 +14,10 @@ export function DraggableStickyNote(
   const initialNote = noteFromAtom();
   if (!initialNote) return <></>;
   const { content, color } = initialNote;
-  const [position, setPosition] = createSignal({ x: initialNote.x, y: initialNote.y });
+  const [position, setPosition] = createSignal({
+    x: initialNote.x,
+    y: initialNote.y,
+  });
   const [scale] = useAtom(scaleState);
   let isDragging = false;
   let dragOffset = { x: 0, y: 0 };
@@ -58,23 +61,23 @@ export function DraggableStickyNote(
 
   return (
     <div
-    onMouseDown={handleMouseDown}
-    style={{
-      position: "absolute",
-      top: `${position().y}px`,
-      left: `${position().x}px`,
-      width: "200px",
-      height: "200px",
-      background: color,
-      padding: "10px",
-      cursor: "move",
-      "user-select": "none",
-      "box-shadow": "0 2px 5px rgba(0,0,0,0.3)",
-      overflow: "hidden",
-      "word-wrap": "break-word", // または wordBreak: "break-all" としても可
-    }}
-  >
-    <p>{content}</p>
-  </div>
+      onMouseDown={handleMouseDown}
+      style={{
+        position: "absolute",
+        top: `${position().y}px`,
+        left: `${position().x}px`,
+        width: "200px",
+        height: "200px",
+        background: color,
+        padding: "10px",
+        cursor: "move",
+        "user-select": "none",
+        "box-shadow": "0 2px 5px rgba(0,0,0,0.3)",
+        overflow: "hidden",
+        "word-wrap": "break-word", // または wordBreak: "break-all" としても可
+      }}
+    >
+      <p>{content}</p>
+    </div>
   );
 }

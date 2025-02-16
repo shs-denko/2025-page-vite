@@ -80,18 +80,18 @@ export function DraggableInfiniteBoard(
 
   return (
     <>
-    <div
-      onMouseDown={handleMouseDown}
-      onWheel={handleWheel}
-      style={{
-        width: "100%",
-        height: "100vh",
-        overflow: "hidden",
-        position: "relative",
-        cursor: isDragging ? "grabbing" : "grab",
-        background: background,
-      }}
-    >
+      <div
+        onMouseDown={handleMouseDown}
+        onWheel={handleWheel}
+        style={{
+          width: "100%",
+          height: "100vh",
+          overflow: "hidden",
+          position: "relative",
+          cursor: isDragging ? "grabbing" : "grab",
+          background: background,
+        }}
+      >
         {/* キャンバス（ボード） */}
         <div
           style={{
@@ -119,19 +119,24 @@ export function DraggableInfiniteBoard(
           class="absolute bottom-10 right-10 w-14 h-14 flex items-center justify-center text-white bg-[#1DA1F2] rounded-full shadow-xl hover:bg-[#1991DA] transition-colors cursor-pointer"
           onClick={() => setIsOpenForm(true)}
         >
-            <svg
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-7 w-7"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-            </svg>
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 4v16m8-8H4"
+            />
+          </svg>
         </div>
         <div class="absolute bottom-0 left-15 h-20 flex items-center justify-center text-white bg-white/30 px-10 rounded-t-lg border-t-1 border-r-1 border-l-1">
-        ↓↓スクロールバー回せば下にあります
-</div>
+          ↓↓スクロールバー回せば下にあります
+        </div>
       </div>
       {isOpenForm() && (
         <PopUpFrame closeScript={setIsOpenForm}>
